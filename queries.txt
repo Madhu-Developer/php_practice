@@ -1,0 +1,27 @@
+creating database                     - create database madhu ;
+creating table                        - create table store(                                                        (
+                                                            product_id int foreign key,
+                                                            product_name varchar(255) not null,
+                                                            product_qty varchar(30),
+                                                            pd_rate int(30) not null,
+                                                            pd_uom varchar(10) not null;
+                                                            );
+
+alter table                           - alter table store add coloum pd_expery date ;
+
+insert values                         - insert into store values
+                                                (1,'rice',1,100,'kg','2024-12-12'),
+                                                (2,'apple',1,50,'kg','2024-12-12');
+
+update statement                      - update store set product_qty=product_qty+10 where product_name='rice' ;
+
+display all the store ditails 
+
+ass order                             - select * from store order by pd_expery ;
+
+discending                            - select * from store order by pd_expery desc ;
+
+
+
+
+
