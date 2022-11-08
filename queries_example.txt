@@ -1,0 +1,47 @@
+create table tutorials_tbl(
+   tutorial_id INT NOT NULL AUTO_INCREMENT,
+   tutorial_title VARCHAR(100) NOT NULL,
+   tutorial_author VARCHAR(40) NOT NULL,
+   submission_date DATE,
+   PRIMARY KEY ( tutorial_id )
+);
+
+Drop Table tutorials_tbl;
+
+INSERT INTO tutorials_tbl
+   (tutorial_title, tutorial_author,submission_date)
+   VALUES
+   ("Learn MySQL", "Abdul S", NOW());
+
+SELECT * from tutorials_tbl
+
+SELECT * from tutorials_tbl WHERE tutorial_author = 'Sanjay';
+
+UPDATE tutorials_tbl 
+    SET tutorial_title = 'Learning JAVA' 
+    WHERE tutorial_id = 3;
+
+DELETE FROM tutorials_tbl WHERE tutorial_id=3;
+
+SELECT * from tutorials_tbl 
+    WHERE tutorial_author LIKE '%jay';
+
+SELECT * from tutorials_tbl ORDER BY tutorial_author ASC //note asc os desc
+
+joins 
+
+left joins
+SELECT a.tutorial_id, a.tutorial_author, b.tutorial_count
+   FROM tutorials_tbl a LEFT JOIN tcount_tbl b
+   ON a.tutorial_author = b.tutorial_author;
+
+right join
+SELECT a.tutorial_id, a.tutorial_author, b.tutorial_count
+   FROM tutorials_tbl a, tcount_tbl b
+   WHERE a.tutorial_author = b.tutorial_author;
+
+null
+
+SELECT * FROM tcount_tbl WHERE tutorial_count = NULL;
+
+SELECT * FROM tcount_tbl WHERE tutorial_count != NULL;
