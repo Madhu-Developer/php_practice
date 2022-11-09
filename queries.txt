@@ -34,7 +34,7 @@ display the bill no and rate
                                       select billno ,pd_rate from store ,purchase ;
 
                                       select billno ,pd_rate from store ,purchase where store.product_id= purchase.product_id;
-                                      selct billno ,pd_rate from store inner join purchase using(product_id) ;
+                                      selct billno ,pd_rate from store inner join purchase using (product_id) ;
 
 
 
